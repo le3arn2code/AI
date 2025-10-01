@@ -1,34 +1,32 @@
-# Lab 32: Data Augmentation - Interview Q&A
+# Interview Q&A - Lab 32: Data Augmentation
 
-### 1. What is data augmentation?
-It is a method to artificially increase dataset diversity by applying transformations like flips, rotations, zoom, and shifts.
+1. **What is data augmentation?**
+   - A technique to artificially increase training data diversity using transformations like flipping and rotation.
 
-### 2. Why is data augmentation important?
-It prevents overfitting and helps models generalize better when training data is limited.
+2. **Why is data augmentation important?**
+   - It prevents overfitting and improves model generalization.
 
-### 3. When should you use data augmentation?
-When datasets are small or limited, especially for computer vision tasks like image classification and detection.
+3. **When should you use data augmentation?**
+   - When the dataset is small or lacks variety.
 
-### 4. What are common augmentation techniques?
-Rotation, flipping, zoom, cropping, shifting, brightness adjustment, and adding noise.
+4. **Give examples of augmentation techniques.**
+   - Flipping, rotation, scaling, cropping, color jitter, noise injection.
 
-### 5. Which libraries support augmentation?
-TensorFlow (`ImageDataGenerator`), PyTorch (`torchvision.transforms`), Pillow, and scikit-image.
+5. **How does augmentation improve performance?**
+   - It exposes the model to varied versions of the data, making it robust to real-world variations.
 
-### 6. What errors did you face in this lab?
-- Missing PIL/scikit-image → installed with pip.  
-- Externally managed environment → solved with venv.  
-- Version mismatch (TensorFlow vs Pillow) → upgraded pip and reinstalled.  
-- Missing `sample_image.jpg` → added manually.
+6. **Can augmentation replace collecting real data?**
+   - No, but it complements small datasets effectively.
 
-### 7. How does augmentation affect performance?
-It improves validation accuracy and reduces overfitting, making the model more robust.
+7. **What’s the difference between offline and online augmentation?**
+   - Offline: Preprocess dataset and save augmented copies.
+   - Online: Apply augmentations on the fly during training.
 
-### 8. Can augmentation replace real data?
-No. Real diverse data is always preferable; augmentation is a supplement.
+8. **What libraries support augmentation in Python?**
+   - TensorFlow/Keras (`ImageDataGenerator`), PyTorch (`torchvision.transforms`), Albumentations.
 
-### 9. How did you implement augmentation here?
-By using `ImageDataGenerator` with `rotation_range=40`, `horizontal_flip=True`, and `vertical_flip=True`.
+9. **What happens if you over-augment data?**
+   - It can distort images too much, leading to poor learning.
 
-### 10. What is the key takeaway?
-Even simple augmentations like flipping and rotation significantly improve model performance with limited datasets.
+10. **How would you explain data augmentation to a non-technical person?**
+   - Like showing a child a toy from different angles so they learn to recognize it in any position.
